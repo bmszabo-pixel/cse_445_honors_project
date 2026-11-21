@@ -1,0 +1,69 @@
+@page "/products"
+
+<PageTitle>Products Catalog - Northpeak Outfitters</PageTitle>
+
+<FluentStack Orientation="Orientation.Vertical" VerticalGap="16" Width="100%">
+    <FluentStack HorizontalAlignment="HorizontalAlignment.SpaceBetween" VerticalAlignment="VerticalAlignment.Center" Width="100%">
+        <div>
+            <h2 style="margin: 0; font-size: 1.5rem; font-weight: 700;">Outdoor Equipment Catalog</h2>
+            <p style="margin: 4px 0 0 0; color: var(--neutral-foreground-hint); font-size: 0.9rem;">
+                Browse technical gear, verify live inventory, and inspect product specifications.
+            </p>
+        </div>
+        <FluentButton Appearance="Appearance.Outline" OnClick="LoadProductsAsync">
+            🔄 Refresh Catalog
+        </FluentButton>
+    </FluentStack>
+
+    @if (!string.IsNullOrEmpty(_errorMessage))
+    {
+        <FluentMessageBar Intent="MessageIntent.Error" Title="Unable to Load Products">
+            @_errorMessage
+        </FluentMessageBar>
+    }
+
+    <FluentCard Style="padding: 16px;">
+        <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="16" Width="100%">
+            <FluentTextField @bind-Value="@_filterText"
+                             @bind-Value:after="ApplyFilter"
+                             Placeholder="Filter products by name, category, or ID..."
+                             Style="max-width: 380px;" />
+            <span style="font-size: 0.85rem; color: var(--neutral-foreground-hint);">
+                Showing @_filteredProducts.Count of @_allProducts.Count items
+            </span>
+        </FluentStack>
+    </FluentCard>
+
+    @if (_isLoading)
+    {
+        <FluentStack HorizontalAlignment="HorizontalAlignment.Center" Style="padding: 40px;">
+            <FluentProgressRing Size="ProgressRingSize.Medium" />
+        </FluentStack>
+    }
+    else
+    {
+        <FluentCard Style="padding: 0; overflow: hidden;">
+            <FluentDataGrid Items="@_filteredQueryable" ResizableColumns="true" Style="width: 100%;">
+                <PropertyColumn Property="@(p => p.Id)" Title="ID" Sortable="true" Width="110px" />
+                <PropertyColumn Property="@(p => p.Name)" Title="Product Name" Sortable="true" />
+                <PropertyColumn Property="@(p => p.Category)" Title="Category" Sortable="true" Width="180px" />
+                <PropertyColumn Property="@(p => p.Price)" Title="Price" Format="C2" Sortable="true" Width="120px" />
+                <TemplateColumn Title="Stock Status" Width="140px" Sortable="true">
+                    @if (context.Stock > 0)
+                    {
+                        <FluentBadge Appearance="Appearance.Accent" BackgroundColor="#107c41" Color="#ffffff">
+                            @context.Stock in stock
+                        </FluentBadge>
+                    }
+                    else
+                    {
+                        <FluentBadge Appearance="Appearance.Accent" BackgroundColor="#a80000" Color="#ffffff">
+                            Out of stock
+                        </FluentBadge>
+                    }
+                </TemplateColumn>
+                <PropertyColumn Property="@(p => p.Description)" Title="Description" />
+            </FluentDataGrid>
+        </FluentCard>
+    }
+</FluentStack>

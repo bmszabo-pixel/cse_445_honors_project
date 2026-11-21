@@ -1,0 +1,42 @@
+<FluentCard Class="chat-window-card">
+    <FluentStack Orientation="Orientation.Vertical" VerticalGap="12" Style="height: 100%;">
+        <FluentStack Orientation="Orientation.Horizontal" HorizontalAlignment="HorizontalAlignment.SpaceBetween" VerticalAlignment="VerticalAlignment.Center" Width="100%">
+            <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalGap="8">
+                <span style="font-size: 1.2rem;">🌲</span>
+                <span style="font-weight: 600;">Northpeak AI Assistant</span>
+            </FluentStack>
+            <FluentButton Appearance="Appearance.Stealth" Size="ButtonSize.Small" OnClick="ResetSessionAsync">
+                New Chat
+            </FluentButton>
+        </FluentStack>
+
+        <FluentDivider />
+
+        <div class="demo-pills-row">
+            <span style="font-size: 0.8rem; color: var(--neutral-foreground-hint);">Quick prompts:</span>
+            <FluentButton Appearance="Appearance.Outline" Size="ButtonSize.Small" OnClick="@(() => SendPromptAsync("Is the Apex 2-Person Ultralight Tent in stock?"))">
+                ⛺ Check Tent Stock
+            </FluentButton>
+            <FluentButton Appearance="Appearance.Outline" Size="ButtonSize.Small" OnClick="@(() => SendPromptAsync("What is the status of order ORD-1001?"))">
+                🚚 Track ORD-1001
+            </FluentButton>
+            <FluentButton Appearance="Appearance.Outline" Size="ButtonSize.Small" OnClick="@(() => SendPromptAsync("What is your return policy and warranty?"))">
+                📋 Returns & Warranty
+            </FluentButton>
+        </div>
+
+        <div @ref="_messagesContainer" class="chat-messages-container">
+            @foreach (var msg in Messages)
+            {
+                <ChatMessage Message="@msg" />
+            }
+
+            @if (IsWaiting)
+            {
+                <TypingIndicator />
+            }
+        </div>
+
+        <ChatInput IsDisabled="@IsWaiting" OnSend="HandleSendMessageAsync" />
+    </FluentStack>
+</FluentCard>

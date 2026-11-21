@@ -1,0 +1,27 @@
+<div class="chat-message-row @(Message.IsUser ? "user" : "assistant")">
+    <div class="chat-avatar">
+        @(Message.IsUser ? "👤" : "🌲")
+    </div>
+    <div class="chat-bubble @(Message.IsUser ? "user" : "assistant")">
+        @if (Message.ToolCalls != null && Message.ToolCalls.Count > 0)
+        {
+            <div class="tool-call-card">
+                @foreach (var tool in Message.ToolCalls)
+                {
+                    <FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center" HorizontalGap="6">
+                        <FluentBadge Appearance="Appearance.Accent">Tool: @tool.ToolName</FluentBadge>
+                        <span style="font-size: 0.8rem; font-style: italic;">@tool.ResultSummary</span>
+                    </FluentStack>
+                }
+            </div>
+        }
+
+        <div class="chat-message-text">
+            @((MarkupString)FormattedContent)
+        </div>
+
+        <div class="chat-message-time">
+            @Message.Timestamp.ToString("t")
+        </div>
+    </div>
+</div>

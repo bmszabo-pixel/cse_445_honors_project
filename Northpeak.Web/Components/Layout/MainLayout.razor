@@ -1,0 +1,31 @@
+﻿@inherits LayoutComponentBase
+
+<FluentDesignTheme @bind-Mode="@_mode" StorageName="northpeak_theme" />
+
+<FluentLayout>
+    <FluentHeader Height="54">
+        <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalGap="12">
+            <span style="font-size: 1.35rem;">🌲</span>
+            <span style="font-weight: 700; font-size: 1.1rem; letter-spacing: 0.5px;">NORTHPEAK OUTFITTERS</span>
+        </FluentStack>
+        <FluentSpacer />
+        <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalGap="8">
+            <FluentButton Appearance="Appearance.Stealth" OnClick="ToggleTheme">
+                @(_mode == DesignThemeModes.Dark ? "☀️ Light" : "🌙 Dark")
+            </FluentButton>
+        </FluentStack>
+    </FluentHeader>
+
+    <FluentStack Orientation="Orientation.Horizontal" Width="100%" Style="min-height: calc(100vh - 54px);">
+        <NavMenu />
+        <FluentBodyContent Style="padding: 24px; width: 100%; overflow-y: auto;">
+            @Body
+        </FluentBodyContent>
+    </FluentStack>
+</FluentLayout>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

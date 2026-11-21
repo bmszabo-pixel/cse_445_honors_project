@@ -1,0 +1,164 @@
+:root {
+    --forest-brand: #2d6a4f;
+    --forest-dark: #1b4332;
+    --forest-light: #d8f3dc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Chat Layout & Bubbles */
+.chat-window-card {
+    height: 720px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--neutral-layer-2);
+    border-radius: 8px;
+    border: 1px solid var(--neutral-stroke-rest);
+    scroll-behavior: smooth;
+}
+
+.chat-message-row {
+    display: flex;
+    gap: 10px;
+    max-width: 80%;
+}
+
+.chat-message-row.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.chat-message-row.assistant {
+    align-self: flex-start;
+}
+
+.chat-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    background: var(--neutral-layer-3);
+    border: 1px solid var(--neutral-stroke-rest);
+    flex-shrink: 0;
+}
+
+.chat-bubble {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.chat-bubble.user {
+    background-color: var(--accent-fill-rest);
+    color: var(--foreground-on-accent-rest);
+    border-bottom-right-radius: 2px;
+}
+
+.chat-bubble.assistant {
+    background-color: var(--neutral-layer-1);
+    color: var(--neutral-foreground-rest);
+    border: 1px solid var(--neutral-stroke-rest);
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.chat-message-text p {
+    margin: 0 0 8px 0;
+}
+
+.chat-message-text p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-message-text ul {
+    margin: 0 0 8px 0;
+    padding-left: 20px;
+}
+
+.chat-message-text code {
+    background: rgba(125, 125, 125, 0.15);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.88em;
+}
+
+.chat-message-time {
+    font-size: 0.72rem;
+    margin-top: 4px;
+    opacity: 0.75;
+    text-align: right;
+}
+
+.tool-call-card {
+    background: rgba(16, 124, 65, 0.08);
+    border: 1px solid rgba(16, 124, 65, 0.3);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+}
+
+.demo-pills-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 2px 0 6px 0;
+}
+
+.order-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    color: var(--neutral-foreground-hint);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    color: var(--neutral-foreground-rest);
+}
+
+.sample-orders-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}

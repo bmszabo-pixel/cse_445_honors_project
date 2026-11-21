@@ -1,0 +1,58 @@
+﻿@page "/"
+
+<PageTitle>Northpeak Outfitters - Premium Outdoor Gear</PageTitle>
+
+<FluentStack Orientation="Orientation.Vertical" VerticalGap="24" Style="max-width: 980px; margin: 0 auto;">
+    <FluentCard Style="padding: 40px; text-align: center; background: radial-gradient(circle at top, var(--accent-fill-rest) 0%, transparent 80%);">
+        <FluentStack Orientation="Orientation.Vertical" VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center" VerticalGap="16">
+            <span style="font-size: 3rem;">🏔️</span>
+            <h1 style="font-size: 2.2rem; font-weight: 800; margin: 0;">Northpeak Outfitters</h1>
+            <p style="font-size: 1.15rem; max-width: 600px; color: var(--neutral-foreground-hint); line-height: 1.6; margin: 0;">
+                Engineered for mountain trails, alpine passes, and rugged backcountry expeditions. Discover technical gear tested in extreme conditions.
+            </p>
+            <FluentStack HorizontalAlignment="HorizontalAlignment.Center" HorizontalGap="12" Style="margin-top: 10px;">
+                <FluentButton Appearance="Appearance.Accent" Size="ButtonSize.Large" OnClick="NavigateToChat">
+                    💬 Start Chatting with AI
+                </FluentButton>
+                <FluentButton Appearance="Appearance.Neutral" Size="ButtonSize.Large" OnClick="NavigateToProducts">
+                    🎒 Explore Catalog
+                </FluentButton>
+                <FluentButton Appearance="Appearance.Outline" Size="ButtonSize.Large" OnClick="NavigateToOrders">
+                    📦 Track Orders
+                </FluentButton>
+            </FluentStack>
+        </FluentStack>
+    </FluentCard>
+
+    <FluentStack Orientation="Orientation.Horizontal" HorizontalGap="16" Width="100%">
+        <FluentCard Style="padding: 20px; flex: 1;">
+            <FluentStack Orientation="Orientation.Vertical" VerticalGap="8">
+                <span style="font-size: 1.5rem;">⛺</span>
+                <h3 style="margin: 0; font-size: 1.1rem;">Expedition Quality</h3>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--neutral-foreground-hint);">
+                    Ultralight tents, technical packs, down sleeping bags, and all-weather boots.
+                </p>
+            </FluentStack>
+        </FluentCard>
+
+        <FluentCard Style="padding: 20px; flex: 1;">
+            <FluentStack Orientation="Orientation.Vertical" VerticalGap="8">
+                <span style="font-size: 1.5rem;">🤖</span>
+                <h3 style="margin: 0; font-size: 1.1rem;">AI Gear Specialist</h3>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--neutral-foreground-hint);">
+                    Ask specs, compare weights, look up live stock, and track orders in real time.
+                </p>
+            </FluentStack>
+        </FluentCard>
+
+        <FluentCard Style="padding: 20px; flex: 1;">
+            <FluentStack Orientation="Orientation.Vertical" VerticalGap="8">
+                <span style="font-size: 1.5rem;">🛡️</span>
+                <h3 style="margin: 0; font-size: 1.1rem;">Store Guarantees</h3>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--neutral-foreground-hint);">
+                    30-day hassle-free returns, free shipping over $50, and 1-year manufacturer warranty.
+                </p>
+            </FluentStack>
+        </FluentCard>
+    </FluentStack>
+</FluentStack>
