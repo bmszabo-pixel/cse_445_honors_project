@@ -1,0 +1,176 @@
+[
+  {
+    "orderId": "ORD-1001",
+    "customerName": "Sarah Jenkins",
+    "orderDate": "2026-11-12",
+    "status": "Shipped",
+    "trackingNumber": "TRK-982341-US",
+    "carrier": "FedEx Ground",
+    "eta": "2026-11-18",
+    "items": [
+      {
+        "productId": "NWG-101",
+        "productName": "Apex 2-Person Ultralight Tent",
+        "quantity": 1,
+        "price": 279.99
+      },
+      {
+        "productId": "NWG-106",
+        "productName": "Cascade Carbon Trekking Poles (Pair)",
+        "quantity": 1,
+        "price": 79.99
+      }
+    ],
+    "total": 359.98
+  },
+  {
+    "orderId": "ORD-1002",
+    "customerName": "Marcus Vance",
+    "orderDate": "2026-11-05",
+    "status": "Delivered",
+    "trackingNumber": "TRK-441209-US",
+    "carrier": "UPS Standard",
+    "eta": "Delivered (2026-11-09)",
+    "items": [
+      {
+        "productId": "NWG-102",
+        "productName": "Summit Ridge 65L Expedition Backpack",
+        "quantity": 1,
+        "price": 219.50
+      },
+      {
+        "productId": "NWG-108",
+        "productName": "HydroFlow Gravity Water Filter System (3L)",
+        "quantity": 1,
+        "price": 59.99
+      }
+    ],
+    "total": 279.49
+  },
+  {
+    "orderId": "ORD-1003",
+    "customerName": "Elena Rostova",
+    "orderDate": "2026-11-16",
+    "status": "Processing",
+    "trackingNumber": "Pending (awaiting carrier pickup)",
+    "carrier": "USPS Priority",
+    "eta": "2026-11-22",
+    "items": [
+      {
+        "productId": "NWG-103",
+        "productName": "Glacier Peak -10°F Down Sleeping Bag",
+        "quantity": 1,
+        "price": 329.00
+      }
+    ],
+    "total": 329.00
+  },
+  {
+    "orderId": "ORD-1004",
+    "customerName": "David Kim",
+    "orderDate": "2026-11-14",
+    "status": "Shipped",
+    "trackingNumber": "TRK-771829-US",
+    "carrier": "UPS Ground",
+    "eta": "2026-11-19",
+    "items": [
+      {
+        "productId": "NWG-105",
+        "productName": "Timberline All-Weather Hiking Boots",
+        "quantity": 1,
+        "price": 169.95
+      },
+      {
+        "productId": "NWG-109",
+        "productName": "Solaris 500 Lumen Rechargeable Headlamp",
+        "quantity": 2,
+        "price": 44.99
+      }
+    ],
+    "total": 259.93
+  },
+  {
+    "orderId": "ORD-1005",
+    "customerName": "Chloe Bennett",
+    "orderDate": "2026-11-02",
+    "status": "Delivered",
+    "trackingNumber": "TRK-319084-US",
+    "carrier": "FedEx Home Delivery",
+    "eta": "Delivered (2026-11-06)",
+    "items": [
+      {
+        "productId": "NWG-110",
+        "productName": "Alpine Shield 3-Layer GORE-TEX Jacket",
+        "quantity": 1,
+        "price": 249.00
+      }
+    ],
+    "total": 249.00
+  },
+  {
+    "orderId": "ORD-1006",
+    "customerName": "Liam O'Connor",
+    "orderDate": "2026-11-16",
+    "status": "Processing",
+    "trackingNumber": "Pending (warehouse packing)",
+    "carrier": "FedEx Ground",
+    "eta": "2026-11-23",
+    "items": [
+      {
+        "productId": "NWG-107",
+        "productName": "Wilderness Roaster Multi-Fuel Camp Stove",
+        "quantity": 1,
+        "price": 89.50
+      },
+      {
+        "productId": "NWG-111",
+        "productName": "BaseCamp Heavy-Duty 45Qt Rotomolded Cooler",
+        "quantity": 1,
+        "price": 199.99
+      }
+    ],
+    "total": 289.49
+  },
+  {
+    "orderId": "ORD-1007",
+    "customerName": "Aisha Patel",
+    "orderDate": "2026-11-13",
+    "status": "Shipped",
+    "trackingNumber": "TRK-662910-US",
+    "carrier": "UPS Ground",
+    "eta": "2026-11-19",
+    "items": [
+      {
+        "productId": "NWG-104",
+        "productName": "TrailBreeze 30°F Synthetic Sleeping Bag",
+        "quantity": 2,
+        "price": 119.99
+      },
+      {
+        "productId": "NWG-109",
+        "productName": "Solaris 500 Lumen Rechargeable Headlamp",
+        "quantity": 1,
+        "price": 44.99
+      }
+    ],
+    "total": 284.97
+  },
+  {
+    "orderId": "ORD-1008",
+    "customerName": "Jackson Reed",
+    "orderDate": "2026-10-28",
+    "status": "Delivered",
+    "trackingNumber": "TRK-102948-US",
+    "carrier": "USPS First Class",
+    "eta": "Delivered (2026-11-01)",
+    "items": [
+      {
+        "productId": "NWG-112",
+        "productName": "MountainPro 14-in-1 Titanium Multi-Tool",
+        "quantity": 1,
+        "price": 64.50
+      }
+    ],
+    "total": 64.50
+  }
+]
