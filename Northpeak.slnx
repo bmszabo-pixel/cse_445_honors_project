@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Northpeak.Api/Northpeak.Api.csproj" />
+  <Project Path="Northpeak.Shared/Northpeak.Shared.csproj" />
+  <Project Path="Northpeak.Web/Northpeak.Web.csproj" />
+</Solution>

@@ -1,0 +1,52 @@
+@if (Message.IsUser)
+{
+    <div class="row user">
+        <div class="user-bubble">@Message.Content</div>
+    </div>
+}
+else
+{
+    <div class="row assistant">
+        <FluentAvatar Size="AvatarSize.Size32" Color="AvatarColor.Brand" Icon="@(new Icons.Filled.Size16.Sparkle())" />
+        <div class="response">
+            @if (Message.ToolActivity.Count > 0)
+            {
+                <ul class="activity">
+                    @foreach (var tool in Message.ToolActivity)
+                    {
+                        <li>
+                            <FluentIcon Value="@ToolIcon(tool.Name)" />
+                            <span>@tool.Summary</span>
+                        </li>
+                    }
+                </ul>
+            }
+
+            <div class="markdown">@Markdown.ToHtml(Message.Content)</div>
+
+            @if (Message.Forecast is { } forecast)
+            {
+                <ForecastCard Forecast="forecast" />
+            }
+
+            @foreach (var order in Message.Orders ?? [])
+            {
+                <OrderCard @key="order.Order.OrderId" Status="order" />
+            }
+
+            @if (Message.Products.Count > 0)
+            {
+                <div class="products">
+                    @foreach (var product in Message.Products)
+                    {
+                        <ProductCard @key="product.Sku" Product="product" />
+                    }
+                </div>
+                @if (Message.Products.Count > 1)
+                {
+                    <span class="products-total">@Message.Products.Count items · @Message.Products.Sum(p => p.Price).ToString("C")</span>
+                }
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,208 @@
+@import url('/_content/Microsoft.FluentUI.AspNetCore.Components/css/reboot.css');
+
+body {
+    background-color: var(--colorNeutralBackground2);
+    color: var(--colorNeutralForeground1);
+    font-family: var(--fontFamilyBase);
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 12px 0 16px;
+    background-color: var(--colorBrandBackground);
+    color: var(--colorNeutralForegroundOnBrand);
+}
+
+.app-header fluent-button {
+    color: var(--colorNeutralForegroundOnBrand);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--colorNeutralForegroundOnBrand);
+    text-decoration: none;
+    font-size: var(--fontSizeBase400);
+    line-height: var(--lineHeightBase400);
+}
+
+.brand-tile {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--borderRadiusMedium);
+    background: var(--colorNeutralForegroundOnBrand);
+    color: var(--colorBrandForeground1);
+}
+
+.brand-name {
+    font-weight: var(--fontWeightSemibold);
+}
+
+.brand-product {
+    padding-left: 10px;
+    border-left: var(--strokeWidthThin) solid currentColor;
+    opacity: 0.85;
+}
+
+.app-content {
+    height: calc(100dvh - 48px);
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--colorNeutralBackground2);
+}
+
+.app-content h1,
+.app-content h2,
+.app-content h3,
+.app-content p {
+    margin: 0;
+}
+
+.simple-page {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 32px;
+}
+
+.muted {
+    color: var(--colorNeutralForeground3);
+}
+
+.icon-tile {
+    width: 32px;
+    height: 32px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: var(--borderRadiusMedium);
+    background: var(--colorBrandBackground2);
+    color: var(--colorBrandForeground2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hint {
+    font-size: var(--fontSizeBase200);
+    line-height: var(--lineHeightBase200);
+    color: var(--colorNeutralForeground3);
+}
+
+.inline-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+}
+
+.suggestion {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    justify-content: flex-start;
+    text-align: start;
+}
+
+.composer-input {
+    flex: 1;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    height: 100%;
+}
+
+.markdown {
+    font-size: var(--fontSizeBase300);
+    line-height: var(--lineHeightBase400);
+}
+
+.app-content .markdown p {
+    margin: 0 0 10px;
+}
+
+.app-content .markdown > :last-child {
+    margin-bottom: 0;
+}
+
+.markdown ul,
+.markdown ol {
+    margin: 0 0 10px;
+    padding-left: 20px;
+}
+
+.markdown li + li {
+    margin-top: 4px;
+}
+
+.markdown table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4px 0 12px;
+    background: var(--colorNeutralBackground1);
+    border-radius: var(--borderRadiusLarge);
+    overflow: hidden;
+    box-shadow: var(--shadow2);
+}
+
+.markdown th {
+    font-weight: var(--fontWeightSemibold);
+    color: var(--colorNeutralForeground2);
+    font-size: var(--fontSizeBase200);
+}
+
+.markdown th,
+.markdown td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStroke2);
+}
+
+.markdown tr:last-child td {
+    border-bottom: none;
+    font-weight: var(--fontWeightSemibold);
+}
+
+.markdown code {
+    font-family: var(--fontFamilyMonospace);
+    font-size: var(--fontSizeBase200);
+}
+
+#blazor-error-ui {
+    background: var(--colorStatusDangerBackground1);
+    color: var(--colorStatusDangerForeground1);
+    bottom: 0;
+    box-shadow: var(--shadow8);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .brand-product {
+        display: none;
+    }
+}

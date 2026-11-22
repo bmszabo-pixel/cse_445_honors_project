@@ -1,0 +1,10 @@
+.composer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px 8px 16px;
+    border-radius: var(--borderRadiusXLarge);
+    background: var(--colorNeutralBackground1);
+    box-shadow: var(--shadow8);
+    border: var(--strokeWidthThin) solid var(--colorNeutralStroke2);
+}

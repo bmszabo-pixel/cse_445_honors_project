@@ -1,0 +1,22 @@
+<div class="composer">
+    <FluentTextInput @key="_inputVersion"
+                     @ref="_input"
+                     @bind-Value="_text"
+                     Immediate="true"
+                     ChangeAfterKeyPress="@([KeyPress.For(KeyCode.Enter)])"
+                     OnChangeAfterKeyPress="HandleEnterAsync"
+                     Appearance="TextInputAppearance.Underline"
+                     Size="TextInputSize.Large"
+                     Placeholder="Ask about your trip, a product, or an order"
+                     Disabled="IsDisabled"
+                     AutoComplete="off"
+                     Width="100%"
+                     Class="composer-input" />
+    <FluentButton Appearance="ButtonAppearance.Primary"
+                  IconOnly="true"
+                  Shape="ButtonShape.Circular"
+                  IconStart="@(new Icons.Filled.Size20.Send())"
+                  Title="Send"
+                  Disabled="@(IsDisabled || string.IsNullOrWhiteSpace(_text))"
+                  OnClick="SendAsync" />
+</div>

@@ -1,0 +1,67 @@
+<div class="chat-window">
+    @if (Messages.Count == 0)
+    {
+        <div class="welcome">
+            <FluentAvatar Size="AvatarSize.Size56" Color="AvatarColor.Brand" Icon="@(new Icons.Filled.Size32.Sparkle())" />
+            <FluentText As="TextTag.H1" Size="TextSize.Size700" Weight="TextWeight.Semibold" Align="TextAlign.Center">
+                Where are you headed?
+            </FluentText>
+            <FluentText As="TextTag.Paragraph" Size="TextSize.Size400" Align="TextAlign.Center" Class="muted">
+                Tell me your destination, dates, budget, and experience. I'll check the forecast, build a gear list
+                within your budget, confirm stock, and make sure your order arrives before you leave.
+            </FluentText>
+
+            <div class="welcome-composer">
+                <ErrorBar Error="@Error" />
+                <ChatInput IsDisabled="IsWaiting" OnSend="OnSend" />
+            </div>
+
+            <div class="suggestions">
+                @foreach (var suggestion in Suggestions)
+                {
+                    <FluentCompoundButton IconStart="suggestion.Icon"
+                                          Label="@suggestion.Title"
+                                          Disabled="IsWaiting"
+                                          Class="suggestion"
+                                          OnClick="@(() => OnSend.InvokeAsync(suggestion.Prompt))">
+                        <Description>@suggestion.Prompt</Description>
+                    </FluentCompoundButton>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="conversation-bar">
+            <TripSummary Trip="Trip" />
+            <FluentButton Appearance="ButtonAppearance.Subtle"
+                          IconStart="@(new Icons.Regular.Size20.ChatAdd())"
+                          Disabled="IsWaiting"
+                          OnClick="OnReset">
+                New chat
+            </FluentButton>
+        </div>
+
+        <div class="messages" @ref="_messagesElement">
+            <div class="column">
+                @foreach (var message in Messages)
+                {
+                    <ChatMessage @key="message.Id" Message="message" />
+                }
+
+                @if (IsWaiting)
+                {
+                    <TypingIndicator />
+                }
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="column">
+                <ErrorBar Error="@Error" />
+                <ChatInput IsDisabled="IsWaiting" OnSend="OnSend" />
+                <span class="disclaimer">Northpeak Trip Assistant uses AI. Check important details before you buy.</span>
+            </div>
+        </div>
+    }
+</div>

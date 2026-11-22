@@ -1,0 +1,14 @@
+<div class="trip-summary" aria-label="Trip details">
+    @if (Items.Count == 0)
+    {
+        <span class="empty">Trip details will appear here as you share them.</span>
+    }
+    else
+    {
+        @foreach (var item in Items)
+        {
+            <FluentBadge Appearance="BadgeAppearance.Outline" Color="BadgeColor.Informative" Shape="BadgeShape.Rounded"
+                         Size="BadgeSize.Large" IconStart="@item.Icon" Content="@item.Text" />
+        }
+    }
+</div>

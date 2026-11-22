@@ -1,0 +1,14 @@
+<FluentCard Class="product-card">
+    <div class="product-top">
+        <span class="category">@Product.Category</span>
+        <FluentBadge Appearance="BadgeAppearance.Tint"
+                     Color="@(Product.InStock ? BadgeColor.Success : BadgeColor.Danger)"
+                     Shape="BadgeShape.Rounded"
+                     Content="@StockText" />
+    </div>
+    <span class="name">@Product.Name</span>
+    <div class="product-bottom">
+        <span class="price">@Product.Price.ToString("C")</span>
+        <span class="sku">@Product.Sku</span>
+    </div>
+</FluentCard>

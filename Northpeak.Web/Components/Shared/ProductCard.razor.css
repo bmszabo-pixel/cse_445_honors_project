@@ -1,0 +1,38 @@
+.product-top,
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.product-top {
+    flex-wrap: wrap;
+}
+
+.product-top ::deep fluent-badge {
+    flex: none;
+    white-space: nowrap;
+}
+
+.category {
+    font-size: var(--fontSizeBase200);
+    color: var(--colorNeutralForeground3);
+}
+
+.name {
+    flex: 1;
+    font-size: var(--fontSizeBase300);
+    font-weight: var(--fontWeightSemibold);
+    line-height: var(--lineHeightBase300);
+}
+
+.price {
+    font-size: var(--fontSizeBase400);
+    font-weight: var(--fontWeightSemibold);
+}
+
+.sku {
+    font-size: var(--fontSizeBase100);
+    color: var(--colorNeutralForeground3);
+}

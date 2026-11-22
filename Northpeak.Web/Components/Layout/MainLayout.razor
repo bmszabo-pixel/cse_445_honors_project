@@ -1,0 +1,33 @@
+@inherits LayoutComponentBase
+
+<FluentLayout>
+    <FluentLayoutItem Area="LayoutArea.Header" Class="app-header">
+        <a href="" class="brand">
+            <span class="brand-tile">
+                <FluentIcon Value="@(new Icons.Filled.Size16.Backpack())" />
+            </span>
+            <span class="brand-name">Northpeak</span>
+            <span class="brand-product">Trip Assistant</span>
+        </a>
+        <FluentSpacer />
+        <FluentButton Appearance="ButtonAppearance.Subtle"
+                      IconOnly="true"
+                      Title="Switch between light and dark theme"
+                      OnClick="ToggleThemeAsync">
+            <FluentIcon Class="hidden-if-light" Value="@(new Icons.Regular.Size20.WeatherSunny())" />
+            <FluentIcon Class="hidden-if-dark" Value="@(new Icons.Regular.Size20.WeatherMoon())" />
+        </FluentButton>
+    </FluentLayoutItem>
+
+    <FluentLayoutItem Area="LayoutArea.Content" Class="app-content">
+        @Body
+    </FluentLayoutItem>
+</FluentLayout>
+
+<FluentProviders />
+
+<div id="blazor-error-ui" data-nosnippet>
+    Something went wrong.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">&times;</span>
+</div>

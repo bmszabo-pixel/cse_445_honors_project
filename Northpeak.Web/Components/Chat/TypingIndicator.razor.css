@@ -1,0 +1,7 @@
+.typing {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--colorNeutralForeground3);
+    font-size: var(--fontSizeBase200);
+}

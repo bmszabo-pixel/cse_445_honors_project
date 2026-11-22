@@ -1,0 +1,11 @@
+@page "/"
+
+<PageTitle>Northpeak Trip Assistant</PageTitle>
+
+<ChatWindow Messages="_messages"
+            Trip="_trip"
+            IsWaiting="@_isWaiting"
+            Error="@_error"
+            Suggestions="Suggestions"
+            OnSend="SendAsync"
+            OnReset="Reset" />

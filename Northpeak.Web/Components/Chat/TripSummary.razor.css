@@ -1,0 +1,12 @@
+.trip-summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    min-height: 32px;
+}
+
+.empty {
+    font-size: var(--fontSizeBase200);
+    color: var(--colorNeutralForeground3);
+}

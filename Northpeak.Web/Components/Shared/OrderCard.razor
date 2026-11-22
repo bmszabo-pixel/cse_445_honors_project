@@ -1,0 +1,45 @@
+<FluentCard Class="inline-card">
+    <div class="order-header">
+        <div class="card-header">
+            <span class="icon-tile small"><FluentIcon Value="@(new Icons.Regular.Size20.VehicleTruckProfile())" /></span>
+            <div class="title">
+                <span class="name">Order @Status.Order.OrderId</span>
+                <span class="sub">Placed @Status.Order.OrderDate.ToString("MMM d, yyyy")</span>
+            </div>
+        </div>
+        <FluentBadge Appearance="BadgeAppearance.Tint" Color="@StatusColor" Size="BadgeSize.Large" Shape="BadgeShape.Rounded"
+                     Content="@Status.Order.Status" />
+    </div>
+
+    <div class="facts">
+        <div><span class="label">Carrier</span><span>@Status.Order.Carrier</span></div>
+        <div><span class="label">Tracking</span><span>@(Status.Order.TrackingNumber ?? "Not assigned yet")</span></div>
+        <div><span class="label">Estimated delivery</span><span>@(Status.Order.EstimatedDelivery?.ToString("ddd, MMM d") ?? "Pending")</span></div>
+    </div>
+
+    <ul class="items">
+        @foreach (var line in Status.Order.Items)
+        {
+            <li>
+                <span>@line.Quantity × @line.Name</span>
+                <span>@line.LineTotal.ToString("C")</span>
+            </li>
+        }
+        <li class="total">
+            <span>Total</span>
+            <span>@Status.Order.Total.ToString("C")</span>
+        </li>
+    </ul>
+
+    @if (Status.Order.ReservedUntil is { } reservedUntil)
+    {
+        <FluentMessageBar Intent="MessageBarIntent.Info" Title="Items reserved" Layout="MessageBarLayout.MultiLine">
+            Your items are held until @reservedUntil.ToString("ddd, MMM d 'at' h:mm tt"). Check your email for the order details and payment link.
+        </FluentMessageBar>
+    }
+
+    @if (Status.Delivery.Verdict != DeliveryVerdict.Unknown)
+    {
+        <FluentMessageBar Intent="Intent" Title="@Title" Layout="MessageBarLayout.MultiLine">@Status.Delivery.Message</FluentMessageBar>
+    }
+</FluentCard>

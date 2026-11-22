@@ -1,0 +1,29 @@
+<FluentCard Class="inline-card">
+    <div class="card-header">
+        <span class="icon-tile small"><FluentIcon Value="@(new Icons.Regular.Size20.WeatherPartlyCloudyDay())" /></span>
+        <div class="title">
+            <span class="name">@Forecast.Location</span>
+            <span class="sub">@Forecast.StartDate.ToString("MMM d") – @Forecast.EndDate.ToString("MMM d")</span>
+        </div>
+    </div>
+
+    @if (Forecast.Days.Count > 0)
+    {
+        <div class="days">
+            @foreach (var day in Forecast.Days)
+            {
+                <div class="day">
+                    <span class="weekday">@day.Date.ToString("ddd")</span>
+                    <FluentIcon Value="@WeatherIcon(day.Conditions)" />
+                    <span class="temps">@day.HighF.ToString("0")° <span class="low">@day.LowF.ToString("0")°</span></span>
+                    <span class="conditions">@day.Conditions@(day.PrecipitationChance is > 0 ? $" · {day.PrecipitationChance}%" : "")</span>
+                </div>
+            }
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(Forecast.Note))
+    {
+        <p class="hint">@Forecast.Note</p>
+    }
+</FluentCard>
